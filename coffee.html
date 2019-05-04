@@ -10,6 +10,10 @@
   <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Raleway" >
   <!-- Our CSS -->
   <link rel="stylesheet" href="static/coffee.css">
+  <script
+  src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script>
 </head>
 <body>
   <div class="container">
@@ -54,29 +58,52 @@
   <script>
 
     // Set these variables to their DOM elements
+    // const coffeeImage = document.querySelector('#coffee-image');
+    const coffeeImage = $('#coffee-image');
+    // coffeeImage.setAttribute('src', './static/coffee_beans.jpg');
+    $('img#coffeeImage').attr('src', 'coffee_beans.jpg');
+  function coffee_beans(){
+    // const coffeeImage = document.querySelector('#coffee-image');
+     // const coffeeImage = document.querySelector('#coffee-image');
+      const coffeeImage = $('#coffee-image');
+    // const oldSrcc = coffeeImage.getAttribute('src');
+    // coffeeImage.setAttribute('src', './static/coffee_beans.jpg');
 
-    const coffeeImage = document.querySelector('#coffee-image');
-    const oldSrcc = coffeeImage.getAttribute('src');
-    coffeeImage.setAttribute('src', './static/coffee_beans.jpg');
+    $('#coffee-image').attr('src', 'coffee_beans.jpg');
+  }
+
+    
 
     // const revenueMessage;
 
     function makeCoffee() {
-        const coffeeImages = document.querySelector('#coffee-image');
-        coffeeImages.setAttribute('src', './static/coffee_mug.jpg');        
+        // const coffeeImages = document.querySelector('#coffee-image');
+        // const coffeeImages = $('#coffee-image');
+        // coffeeImages.setAttribute('src', './static/coffee_mug.jpg');    
+
+        $('#coffee-image').attr('src', 'coffee_mug.jpg');     
     }
  
-    coffeeImage.addEventListener('click', makeCoffee);
+    
 
     function coffeeMachine(){
-        const coffeeImage = document.querySelector('#coffee-image');
-        coffeeImage.setAttribute('src', '.static/coffee_machine.jpg');
+        // const coffeeImage = document.querySelector('#coffee-image');
+        const coffeeImage = $('#coffee-image');
 
+        // coffeeImage.setAttribute('src', './static/coffee_machine.jpg');
 
+        $('#coffee-image').attr('src', 'coffee_machine.jpg');
     }
-    setTimeout()
+    
 
-    // use this JavaScript object in further study step
+    function coffeeTime() {
+      // coffee_beans()
+      coffeeMachine();
+      setTimeout(makeCoffee,1500);
+      setTimeout(coffee_beans, 4000)
+    }
+    
+$('#coffeeImage').on('click', coffeeTime);    // use this JavaScript object in further study step
 
     const prices = {
       'brew': 2.05,
